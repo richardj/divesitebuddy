@@ -30,7 +30,7 @@
  * element as these can be overridden using font theme settings.
  */
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700);
 
 html {
   background: #fff;
@@ -182,9 +182,10 @@ var {
  * Wraps the leaderboard
  */
 .region-leaderboard {
-
+  background: url('../images/leaderboard_default.jpg') no-repeat 0 0;
 }
 .region-leaderboard .block-inner {
+  height: 300px;
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
@@ -316,6 +317,41 @@ ul.links li {
   display: inline;
   list-style: none;
   padding: 0 10px 0 0;
+}
+
+/* Search form frontpage */
+.region-leaderboard .block-search {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.region-leaderboard .block-search .block-title {
+  padding-top: 25px;
+  margin-bottom: 15px;
+  font-size: 48px;
+  line-height: 48px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 1px 3px 3px rgba(0,0,0,.5);
+  text-align: center;
+}
+
+.region-leaderboard .block-search form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #252525;
+}
+
+.region-leaderboard .block-search input[type="search"] {
+  width: 360px;
+}
+
+.region-leaderboard .block-search input[type="submit"] {
+
 }
 
 /*
@@ -465,6 +501,38 @@ a:focus {
 
 .nav .block {
   margin-bottom: 0;
+}
+
+/* primary menu */
+
+.region-header nav {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+.region-header nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.region-header nav  li {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.region-header nav li a {
+  padding: 15px;
+  font-size: 18px;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.region-header nav li a:hover {
+  background: #313b43;
 }
 
 /*
@@ -1280,6 +1348,42 @@ ul.action-links li {}
 /* =============================================================================
  *   Forms
  * ========================================================================== */
+
+/* input defaults */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  border-radius: 3px;
+  padding: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #333;
+}
+
+input[type="submit"] {
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 3px;
+  border: 1px solid #777;
+  background: #26b9f6;
+  text-shadow: ;
+  background: -moz-linear-gradient(top,  #26b9f6 0%, #0394d1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#26b9f6), color-stop(100%,#0394d1));
+  background: -webkit-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: -o-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: -ms-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: linear-gradient(to bottom,  #26b9f6 0%,#0394d1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26b9f6', endColorstr='#0394d1',GradientType=0 );
+}
+
+input[type="submit"]:hover {
+  border: 1px solid #333;
+}
 
 /*
  * Wrapper for a form element (or group of form elements) and its label
