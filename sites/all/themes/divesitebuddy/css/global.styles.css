@@ -168,7 +168,7 @@ var {
  */
 #footer {
   height: 15em;
-  box-shadow: inset 0 1px 4px rgba(255,0,0,0.9);
+  box-shadow: inset 1px 4px 9px -3px rgba(0,0,0,.9); 
   background: #263747;
 }
 
@@ -506,24 +506,24 @@ a:focus {
 
 /* primary menu */
 
-.region-header nav {
+.region-header #block-system-main-menu {
   margin: 0 auto;
   width: 100%;
   max-width: 900px;
 }
 
-.region-header nav ul {
+.region-header #block-system-main-menu ul {
   margin: 0;
   padding: 0;
 }
 
-.region-header nav  li {
+.region-header #block-system-main-menu  li {
   padding: 0;
   margin: 0;
   display: inline-block;
 }
 
-.region-header nav li a {
+.region-header #block-system-main-menu li a {
   padding: 15px;
   font-size: 18px;
   display: block;
@@ -532,8 +532,51 @@ a:focus {
   color: #fff;
 }
 
-.region-header nav li a:hover {
+.region-header #block-system-main-menu li a:hover {
   background: #313b43;
+}
+
+/* user menu */
+
+.region-header #block-system-user-menu {
+  position: absolute;
+  right: 10px;
+  top: 80px;
+}
+
+.region-header #block-system-user-menu li {
+  display: inline-block;
+}
+
+.region-header #block-system-user-menu li a {
+  color: #fff;
+}
+
+/* user login block */
+.region-header #block-user-login {
+  width: 250px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.region-header #block-user-login .block-title {
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.region-header #block-user-login form {
+  display: none;
+  padding: 5px;
+  border-radius: 3px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 6px rgba(0,0,0,.5);
+}
+
+.region-header #block-user-login:hover form {
+  display: block;
 }
 
 /*
