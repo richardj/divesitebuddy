@@ -338,11 +338,12 @@ ul.links li {
 }
 
 .region-leaderboard .block-search form {
-  width: 100%;
+  width: 460px;
   margin: 0 auto;
   padding: 4px;
   border-radius: 5px;
   display: inline-block;
+  box-sizing: border-box;
   background: #252525;
 }
 
