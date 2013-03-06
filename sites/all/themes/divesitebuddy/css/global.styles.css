@@ -191,6 +191,10 @@ var {
   margin: 0 auto;
 }
 
+.not-front .region-leaderboard .block-inner {
+  height: 200px;
+}
+
 /*
  * Wraps the header
  */
@@ -532,7 +536,9 @@ a:focus {
   color: #fff;
 }
 
-.region-header #block-system-main-menu li a:hover {
+.region-header #block-system-main-menu li a:hover,
+.region-header #block-system-main-menu li a.active-trail,
+.region-header #block-system-main-menu li a.active {
   background: #313b43;
 }
 
