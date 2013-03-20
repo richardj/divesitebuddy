@@ -40,7 +40,7 @@ html {
 body {
   color: #283233;
   font-family: "Trebuchet MS", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 87.5%;
+  font-size: 12pt;
 }
 
 
@@ -162,7 +162,9 @@ var {
 /*
  * Wraps the main-content-header, the content region and feed-icons. Use this wrapper to style the entire main content column
  */
-#main-content {}
+#main-content {
+  margin: 0;
+}
 
 /*
  * Wraps the content region, avoid applying styles to this wrapper, its used mainly for position and invisible gutters and can be problematic to style
@@ -317,6 +319,10 @@ var {
   padding-left: 0;
 }
 
+#crumbs li {
+  display: inline-block;
+}
+
 #crumbs li a {
   font-weight: bold;
   padding: 5px;
@@ -386,9 +392,32 @@ ul.links li {
   width: 80%;
 }
 
-.region-leaderboard .block-search input[type="submit"] {
-
+.region-leaderboard .block-search #search-block-form input[type="submit"] {
+  margin-right: 0;
+  display: block;
+  float: right;
+  padding: 10px 9px 9px 50px;
+  font-size: 18px;
+  position: relative;
+  background: url('../images/icons.png'), -moz-linear-gradient(top,  #26b9f6 0%, #0394d1 100%);
+  background: url('../images/icons.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#26b9f6), color-stop(100%,#0394d1));
+  background: url('../images/icons.png'), -webkit-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: url('../images/icons.png'), -o-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: url('../images/icons.png'), -ms-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: url('../images/icons.png'), linear-gradient(to bottom,  #26b9f6 0%,#0394d1 100%);
+  background-repeat: no-repeat;
+  background-position: left top;
 }
+/*
+.region-leaderboard .block-search input[type="submit"]:after {
+  content: "asdas";
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 0;
+  background: url('../images/icons.png') no-repeat 0 -75px;
+}*/
 
 /*
  * Search results are an ordered list so reset the margin
@@ -420,7 +449,9 @@ ul.links li {
 /*
  * Header region, embedded in the #header
  */
-.region-header {}
+.region-header {
+  position: relative;
+}
 
 /*
  * Generally used to output Drupals help block, if the help module is enabled
@@ -577,8 +608,8 @@ a:focus {
 
 .region-header #block-system-user-menu {
   position: absolute;
-  right: 10px;
-  top: 80px;
+  right: 15%;
+  top: -20px;
 }
 
 .region-header #block-system-user-menu li {
@@ -597,64 +628,49 @@ a:focus {
   top: 20px;
 }
 
+.region-header #block-user-login label {
+  color: #fff;
+}
+
 .region-header #block-user-login .block-title {
   color: #fff;
   font-size: 15px;
   cursor: pointer;
 }
 
-.region-header #block-user-login form {
+.region-header #block-user-login form ,
+.region-header #block-system-user-menu li .menu {
   display: none;
+  width: 150px;
   padding: 5px;
-  border-radius: 3px;
-  background: #fff;
+  border-radius: 0 0 2px 2px;
+  background: #263747;
   box-sizing: border-box;
-  box-shadow: 0 0 6px rgba(0,0,0,.5);
+  position: absolute;
+  top: 60px;
 }
 
-.region-header #block-user-login:hover form {
+.region-header #block-system-user-menu li .menu:before {
+  content: "";
+  width: 0; 
+  height: 0;
+  position: absolute;
+  left: 10px;
+  top: -12px;
+  border-bottom: 12px solid #263747; 
+  border-left: 6px solid transparent; 
+  border-right: 6px solid transparent; 
+} 
+
+.region-header #block-user-login form  {
+  top: 0;
+  position: relative;
+}
+
+.region-header #block-user-login:hover form,
+.region-header #block-system-user-menu:hover li .menu  {
   display: block;
 }
-
-/*
- * Vertical style
- */
-.sf-vertical {
-  width: 100%;
-}
-
-.sf-vertical li {
-  width: 100%;
-}
-
-.sf-vertical li.last {}
-
-.sf-vertical li:hover ul,
-.sf-vertical li.sfHover ul {
-  left: 100%;
-  top: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.sf-vertical li a {
-  padding: 0 10px;
-}
-
-/*
- * Navbar style
- */
-.sf-navbar {
-  padding-bottom: 0 !important;
-}
-
-/*
- * Sensible padding for the default style
- */
-.sf-menu.sf-style-default a {
-  padding: 0 10px;
-}
-
 
 /* =============================================================================
  *   Menus, usually blocks
@@ -668,41 +684,40 @@ ul.menu ul {
   padding-left: 15px;
 }
 
-ul.menu ul ul {}
-
-ul.menu ul ul ul {}
-
 ul.menu li {
   margin: 0;
 }
-
-ul.menu li.collapsed,
-ul.menu li.expanded,
-ul.menu li.leaf {}
-
-ul.menu li a {}
-
-ul.menu li a:link,
-ul.menu li a:visited {}
-
-ul.menu li a:active,
-ul.menu li a.active {}
-
-ul.menu li a:hover,
-ul.menu li a:focus {}
-
-ul.menu li.active a,
-ul.menu li.active-trail a {}
-
-ul.menu li.first,
-ul.menu li.last {}
 
 /* If li.content exists it's a problem, so reset the padding */
 .block .menu li.content {
   padding: 0;
 }
 
+/* user menu */
 
+#block-system-user-menu li .nolink {
+  width: 120px;
+  display: inline-block;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  padding: 20px 15px 10px;
+}
+
+.region-header #block-system-user-menu:hover li .nolink {
+  background: #313b43;
+}
+
+#block-system-user-menu li .menu li {
+  display: block;
+  padding-left: 35px;
+}
+
+#block-system-user-menu li .menu li a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11pt;
+}
 
 /* =============================================================================
  *   Pagers
@@ -1081,7 +1096,9 @@ ul.action-links li {}
 /*
  * Inner wrapper for most blocks, good for margin, padding and borders, block_system_main does not have it
  */
-.block-inner {}
+.block-inner {
+  margin: 0;
+}
 
 /*
  * The first block in the region
@@ -1122,7 +1139,7 @@ ul.action-links li {}
 
 .block-content ul,
 .block-content ol {
-  padding: 0 0 0 15px;
+  padding: 0;
 }
 
 .block-content li {
@@ -1458,6 +1475,15 @@ ul.action-links li {}
  *   Forms
  * ========================================================================== */
 
+/* replace default throbber */
+
+html.js input.form-autocomplete {
+  background: url('../images/throbber.gif') no-repeat 99% -100px;
+}
+html.js input.throbbing {
+  background-position: 99% 50%;
+}
+
 /* input defaults */
 
 input[type="text"],
@@ -1490,8 +1516,41 @@ input[type="submit"] {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26b9f6', endColorstr='#0394d1',GradientType=0 );
 }
 
+#edit-submit {
+  margin-right: 10px;
+}
+
 input[type="submit"]:hover {
   border: 1px solid #333;
+}
+
+
+/*
+ * User forms (adding spot, profile stuff)
+ */
+
+/* vertical tabs override */
+
+form .vertical-tabs {
+  border: none;
+}
+
+form .vertical-tabs .vertical-tabs-list {
+  border: none;
+}
+
+form .vertical-tabs .vertical-tabs-list li {
+  border: none;
+  background: #fff url('../images/icons.png') no-repeat 100% -115px;
+}
+
+form .vertical-tabs .vertical-tabs-list li .summary {
+  font-size: 12px;
+  color: #666;
+}
+
+form .vertical-tabs .vertical-tabs-list li.selected {
+  background-position: 100% -165px;
 }
 
 /*

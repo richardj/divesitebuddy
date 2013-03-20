@@ -46,6 +46,16 @@ function divesitebuddy_textarea($vars) {
   return $output;
 }
 
+// function divesitebuddy_menu_link(array $variables) {
+//   $element = $variables['element'];
+
+//   if ($element['#theme'] == 'menu_link__user_menu') {
+//     global $user;
+
+//     $element['#title'] = 'asdas';
+//   }
+// }
+
 /**
  * Preprocess variables for the html template.
  */

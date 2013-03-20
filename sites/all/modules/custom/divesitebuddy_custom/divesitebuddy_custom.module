@@ -1,0 +1,16 @@
+<?php
+
+function divesitebuddy_custom_menu_alter(&$items) {
+  $items['user/register']['type'] = MENU_CALLBACK;
+  $items['user/password']['type'] = MENU_CALLBACK;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * Add some text to the login form elements description
+ */
+function divesitebuddy_custom_form_user_login_alter(&$form, &$form_state) {
+  dpm('test');
+ // $form['name']['#description'] .= ' ' . t('Need an account? Please <a href="!link">register here</a>.', array('!link' => url('user/register')));
+  $form['pass']['#description'] = ' ' . t('Forgot your password? <a href="!link">Request a new one</a>!', array('!link' => url('user/password')));
+}
