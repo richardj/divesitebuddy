@@ -190,7 +190,8 @@ var {
  * Wraps the leaderboard
  */
 .region-leaderboard {
-  background: url('../images/leaderboard_default.jpg') no-repeat 0 0;
+  margin-bottom: 15px;
+  background: url('../images/leaderboard_default.jpg') no-repeat fixed 0 0;
 }
 .region-leaderboard .block-inner {
   height: 300px;
@@ -382,7 +383,7 @@ ul.links li {
 
 .region-leaderboard .block-search input[type="search"] {
   font-size: 15pt;
-  width: 25em;
+  width: 80%;
 }
 
 .region-leaderboard .block-search input[type="submit"] {

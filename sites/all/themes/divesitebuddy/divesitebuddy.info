@@ -57,7 +57,7 @@
 
 
 ;----------// Scripts
-
+  scripts[] = scripts/custom.js
   ; Internet Explorer Scripts
   ;
   ; AT can load scripts in conditional comments from the info file. If you are
@@ -70,7 +70,7 @@
   ; For example if you want to load a script just for IE 8 and below use the
   ; following as a guide:
 
-  ; ie_scripts[lte IE 8][] = js/my-script.js
+  ; ie_scripts[lte IE 8][] = /my-script.js
 
 
 ;----------// Regions
