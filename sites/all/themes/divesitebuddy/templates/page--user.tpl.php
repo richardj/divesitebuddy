@@ -142,6 +142,13 @@
 
   <!-- region: Secondary Content -->
   <?php print render($page['secondary_content']); ?>
+
+    <?php if ($title): ?>
+      <h1 id="page-title">
+        <?php print $title; ?>
+      </h1>
+    <?php endif; ?>
+
   <div id="columns" class="columns clearfix">
     <div id="content-column" class="content-column" role="main">
       <div class="content-inner">
@@ -175,12 +182,6 @@
               <?php endif; ?>
 
             </header>
-          <?php endif; ?>
-
-          <?php if ($title): ?>
-            <h1 id="page-title">
-              <?php print $title; ?>
-            </h1>
           <?php endif; ?>
 
           <!-- region: Main Content -->

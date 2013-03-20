@@ -164,6 +164,7 @@ var {
  */
 #main-content {
   margin: 0;
+  position: relative;
 }
 
 /*
@@ -399,14 +400,15 @@ ul.links li {
   padding: 10px 9px 9px 50px;
   font-size: 18px;
   position: relative;
-  background: url('../images/icons.png'), -moz-linear-gradient(top,  #26b9f6 0%, #0394d1 100%);
-  background: url('../images/icons.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#26b9f6), color-stop(100%,#0394d1));
-  background: url('../images/icons.png'), -webkit-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
-  background: url('../images/icons.png'), -o-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
-  background: url('../images/icons.png'), -ms-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
-  background: url('../images/icons.png'), linear-gradient(to bottom,  #26b9f6 0%,#0394d1 100%);
+  border: 1px solid #333;
+  background: url('../images/search-icon.png'), -moz-linear-gradient(top,  #26b9f6 0%, #0394d1 100%);
+  background: url('../images/search-icon.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#26b9f6), color-stop(100%,#0394d1));
+  background: url('../images/search-icon.png'), -webkit-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: url('../images/search-icon.png'), -o-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: url('../images/search-icon.png'), -ms-linear-gradient(top,  #26b9f6 0%,#0394d1 100%);
+  background: url('../images/search-icon.png'), linear-gradient(to bottom,  #26b9f6 0%,#0394d1 100%);
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: 10% center;
 }
 /*
 .region-leaderboard .block-search input[type="submit"]:after {
@@ -439,7 +441,13 @@ ul.links li {
 /*
  * Regions have an inner div - perfect for adding margin, padding or borders
  */
-.region-inner {}
+.region-inner {
+  margin-left: 20px;
+}
+
+.region-highlighted .region-inner {
+  margin-left: 0;
+}
 
 /*
  * Regions can be nested, such as when using Panels
@@ -823,13 +831,18 @@ ul.pager li.pager-last {}
  * ========================================================================== */
 
 #tasks {
-  margin-bottom: 15px;
+  margin-bottom: 0;
+}
+
+#tasks ul.primary {
+  border-bottom: 0;
+  margin-bottom: 0;
 }
 
 ul.primary {
   border-bottom-color: #ccc;
   margin: 20px 0;
-  padding: 0 0 0 5px;
+  padding: 0;
 }
 
 ul.primary li {
@@ -845,6 +858,8 @@ ul.primary li a {
   padding: 0 10px;
   display: block;
   float: left;
+  border-radius: 3px 3px 0 0;
+  font-size: 15pt;
   height: 1.5em;
   line-height: 1.5em;
 }
@@ -858,8 +873,9 @@ ul.primary li a:focus {
 ul.primary li.active a,
 ul.primary li.active a:hover,
 ul.primary li.active a:focus {
-  background-color: #fff;
-  border-bottom-color: #fff;
+  color: #fff;
+  border-color: #00a8ee;
+  background-color: #00a8ee;
 }
 
 ul.secondary {
@@ -1311,7 +1327,16 @@ ul.action-links li {}
 
 .node .user-picture {}
 
-.node .submitted {}
+.node .submitted {
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.node .submitted .user-picture {
+  float: left;
+  margin-right: 15px;
+}
 
 .node .submitted .username {}
 
@@ -1504,7 +1529,7 @@ input[type="submit"] {
   color: #fff;
   padding: 5px 9px;
   border-radius: 3px;
-  border: 1px solid #333;
+  border: 1px solid transparent;
   background: #26b9f6;
   text-shadow: ;
   background: -moz-linear-gradient(top,  #26b9f6 0%, #0394d1 100%);
@@ -1520,6 +1545,21 @@ input[type="submit"] {
   margin-right: 10px;
 }
 
+#edit-preview {
+  color: #666;
+  margin-right: 10px;
+  background: #ccc;
+}
+
+#edit-delete {
+  float: right;
+  background-image: -moz-linear-gradient(#d75034, #a43826);
+  background-image: -ms-linear-gradient(top, #d75034, #a43826);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d75034), to(#a43826));
+  background-image: -webkit-linear-gradient(#d75034, #a43826);
+  background-image: linear-gradient(top, #d75034, #a43826);
+}
+
 input[type="submit"]:hover {
   border: 1px solid #333;
 }
@@ -1528,6 +1568,12 @@ input[type="submit"]:hover {
 /*
  * User forms (adding spot, profile stuff)
  */
+
+/* hide form thingies */
+
+form .filter-wrapper {
+  display: none;
+}
 
 /* vertical tabs override */
 
@@ -1551,6 +1597,17 @@ form .vertical-tabs .vertical-tabs-list li .summary {
 
 form .vertical-tabs .vertical-tabs-list li.selected {
   background-position: 100% -165px;
+}
+
+form .user-picture {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin-right: 15px;
+}
+
+form .description {
+  color: #999;
 }
 
 /*
@@ -1903,3 +1960,26 @@ tr.error {}
 .field-type-geofield {
   background: url('../images/loading.gif') no-repeat 50% 50%;
 }
+
+/* =============================================================================
+ *   Gallery
+ * ========================================================================== */
+.node-type-gallery .field-type-image {
+  overflow: hidden;
+}
+
+.node-type-gallery .field-type-image .field-item {
+  float: left;
+}
+
+.node-type-gallery .field-type-image .field-item a {
+  display: block;
+}
+
+.node-type-gallery .field-type-image .field-item a img {
+  display: inline;
+}
+
+ #colorbox button {
+  border: none;
+ }
