@@ -1338,6 +1338,22 @@ ul.action-links li {}
   margin-right: 15px;
 }
 
+.profile .user-picture {
+  margin: 0;
+  float: none;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  border: 4px solid #00b1fb;
+  display: inline-block;
+  z-index: 2;
+  background: #fff;
+}
+
+.profile .user-picture img {
+  display: block;
+}
+
 .node .submitted .username {}
 
 .node .submitted time {}
@@ -1397,7 +1413,7 @@ ul.action-links li {}
   padding: 15px 0 0 0;
   border-top: 1px solid #c0c0c0;
   position: relative;
-  margin: 1.5em 0;
+  margin: 1.5em 0;  
 }
 
 #comments:after {
@@ -1409,6 +1425,7 @@ ul.action-links li {}
   left: -111px;
   content: "Comments";
   color: #fff;
+  font-size: 13px;
   box-sizing: border-box;
   background: #00b1fb;
 }
@@ -1931,7 +1948,7 @@ tr.error {}
  * ========================================================================== */
 
 
-.node-type-spot .node .rate-widget {
+.node-type-spot .node-content .rate-widget {
   width: 130px;
   top: 0;
   left: -130px;

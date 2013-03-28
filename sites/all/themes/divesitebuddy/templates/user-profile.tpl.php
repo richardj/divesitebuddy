@@ -36,5 +36,13 @@
  */
 ?>
 <article class="profile"<?php print $attributes; ?>>
+  <?php hide($user_profile['field_first_name']); ?>
+  <?php hide($user_profile['field_last_name']); ?>
+  <?php hide($user_profile['user_picture']); ?>
+  <?php print render($user_profile['user_picture']); ?>
+  <h2>
+    <?php if (!empty($user_profile['field_first_name']['#items'])): ?><?php print $user_profile['field_first_name']['#items'][0]['safe_value'];?> <?php endif; ?>
+    <?php if (!empty($user_profile['field_last_name']['#items'])): ?><?php print $user_profile['field_last_name']['#items'][0]['safe_value'];?><?php endif; ?>
+  </h2>
   <?php print render($user_profile); ?>
 </article>

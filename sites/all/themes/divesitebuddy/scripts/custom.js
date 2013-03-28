@@ -12,6 +12,21 @@ Drupal.behaviors.fixedNavigation = {
   }
 };
 
+Drupal.behaviors.descriptions = {
+  attach: function (context) {
+    $('.description').each(function() {
+      var description = $(this);
+      description.hide();
+
+      var label = description.parent('form-item').find('label:first');
+      description.parent('.form-item').find('label:first').hover(
+        function () { description.show(); },
+        function () { description.hide(); }
+      );
+    });
+  }
+};
+
 // You could add additional behaviors here.
 Drupal.behaviors.myModuleMagic = {
   attach: function (context, settings) { },
