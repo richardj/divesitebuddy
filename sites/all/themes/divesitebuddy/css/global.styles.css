@@ -57,7 +57,7 @@ h3 {
 }
 
 h1 {
-  font-size: 48pt;
+  font-size: 30pt;
 }
 
 h2 {}
@@ -199,7 +199,7 @@ var {
 .region-leaderboard .block-inner {
   height: 300px;
   width: 100%;
-  max-width: 1140px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -1997,6 +1997,76 @@ tr.error {}
   display: inline;
 }
 
- #colorbox button {
-  border: none;
+#colorbox button {
+border: none;
+}
+
+ /* =============================================================================
+ *   User login / Social login
+ * ========================================================================== */
+
+#user-login .item-list ul li {
+  margin-left: 0;
+}
+
+#user-login .item-list ul a {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+  /* =============================================================================
+ *   Spot views
+ * ========================================================================== */
+
+ .view-spot-overview .views-row {
+  width: 316px;
+  height: 216px;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
  }
+
+
+.view-spot-overview .node-title {
+  bottom: 0;
+  position: absolute;
+  font-size: 1em;
+}
+
+.view-spot-overview .node-title a {
+  width: 300px;
+  padding: 9px;
+  color: #2d5c70;
+  display: block;
+  background: rgba(255,255,255, 0.7);
+}
+
+.view-spot-overview .rate-widget {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+}
+
+.view-spot-overview .rate-info {
+  display: none;
+}
+
+/* more link */
+
+.view-spot-overview .more-link {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+}
+
+.view-spot-overview .more-link a {
+  padding: 21px 18px 11px;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 0 0 3px 3px;
+  background: #00a8ee;
+}
+   /* =============================================================================
+ *   Top rated spot views
+ * ========================================================================== */
