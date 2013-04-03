@@ -1,5 +1,25 @@
 <?php
 
+/**
+* Implements hook_entity_info_alter().
+* With this function you can add extra view modes
+*/
+function divesitebuddy_custom_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['overview'] = array(
+    'label' => t('Overview'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+* Implements hook_preprocess_node().
+*/
+function divesitebuddy_custom_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'overview') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__overview';
+  }
+} 
+
 function divesitebuddy_custom_menu_alter(&$items) {
   $items['user/register']['type'] = MENU_CALLBACK;
   $items['user/password']['type'] = MENU_CALLBACK;
