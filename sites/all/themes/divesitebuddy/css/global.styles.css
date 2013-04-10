@@ -179,6 +179,7 @@ var {
  */
 #footer {
   height: 15em;
+  margin-top: 50px;
   box-shadow: inset 1px 4px 9px -3px rgba(0,0,0,.9); 
   background: #263747;
 }
@@ -385,6 +386,7 @@ ul.links li {
   border-radius: 5px;
   display: inline-block;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
   background: #252525;
 }
 
@@ -609,7 +611,9 @@ a:focus {
 .region-header #block-system-main-menu li a:hover,
 .region-header #block-system-main-menu li a.active-trail,
 .region-header #block-system-main-menu li a.active {
-  background: #313b43;
+  box-shadow: inset 0 4px 3px rgba(0,0,0,.5);
+  background: #263847;
+  text-decoration: none;
 }
 
 /* user menu */
@@ -654,7 +658,9 @@ a:focus {
   border-radius: 0 0 2px 2px;
   background: #263747;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
   position: absolute;
+  z-index: 2;
   top: 60px;
 }
 
@@ -714,7 +720,8 @@ ul.menu li {
 }
 
 .region-header #block-system-user-menu:hover li .nolink {
-  background: #313b43;
+  box-shadow: inset 0 4px 3px rgba(0,0,0,.5);
+  background: #263847;
 }
 
 #block-system-user-menu li .menu li {
@@ -859,7 +866,7 @@ ul.primary li a {
   display: block;
   float: left;
   border-radius: 3px 3px 0 0;
-  font-size: 15pt;
+  font-size: 12pt;
   height: 1.5em;
   line-height: 1.5em;
 }
@@ -1105,6 +1112,7 @@ ul.action-links li {}
   padding: 10px;
   border: 1px solid #c0c0c0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
   background: #fff;
   box-shadow: 1px 1px 3px rgba(100,100,100, 0.4);
 }
@@ -1341,9 +1349,6 @@ ul.action-links li {}
 .profile .user-picture {
   margin: 0;
   float: none;
-  position: absolute;
-  top: -50px;
-  right: 0;
   border: 4px solid #00b1fb;
   display: inline-block;
   z-index: 2;
@@ -1370,7 +1375,34 @@ ul.action-links li {}
 
 .node ul.links li.node-read-more a {}
 
-.node ul.links li.comment-add a {}
+.node ul.links li.comment-add a {
+  padding: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 11pt;
+  border-radius: 3px;
+  text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
+  background: #7abcff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #7abcff 0%, #00b1fb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(100%,#00b1fb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #7abcff 0%,#00b1fb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #7abcff 0%,#00b1fb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #7abcff 0%,#00b1fb 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #7abcff 0%,#00b1fb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#00b1fb',GradientType=0 ); /* IE6-9 */
+}
+
+.node ul.links li.comment-add a:hover {
+  text-decoration: none;
+  background: #a3d1ff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #a3d1ff 0%, #00b1fb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a3d1ff), color-stop(100%,#00b1fb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #a3d1ff 0%,#00b1fb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #a3d1ff 0%,#00b1fb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #a3d1ff 0%,#00b1fb 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #a3d1ff 0%,#00b1fb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3d1ff', endColorstr='#00b1fb',GradientType=0 ); /* IE6-9 */
+}
 
 .node ul.links li.comment-comments a {}
 
@@ -1427,10 +1459,9 @@ ul.action-links li {}
   color: #fff;
   font-size: 13px;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
   background: #00b1fb;
 }
-
-#comments h2 {}
 
 #comments h2.comment-title {
   margin: 0;
@@ -1440,11 +1471,65 @@ ul.action-links li {}
   margin: 0;
 }
 
+#comments label {
+  width: 150px;
+  float: left;
+}
+
+#comments h2.comment-title {
+  margin-bottom: 20px;
+}
+
+#comments h2.comment-form {
+  margin: 0;
+}
+
+.comment footer {
+  margin: 0;
+  float: left;
+  border: none;
+  background: none;
+  font-size: 80%;
+}
+
+.comment .links {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.comment .author-datetime {
+  float: left;
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 80%;
+  color: #999;
+}
+
 /*
  * Wrapper for a single comment
  */
 .comment {
-  margin-bottom: 20px;
+  padding-top: 5px;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment .rate-widget {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.comment .rate-info {
+  display: none;
+}
+
+.comment nav {
+  font-size: 80%;
+  text-align: right;
 }
 
 .comment.first {}
@@ -1457,7 +1542,11 @@ ul.action-links li {}
 
 .comment .user-picture {}
 
-.comment .submitted {}
+.comment .submitted {
+  width: 120px;
+  margin-right: 5px;
+  border-bottom: none;
+}
 
 .comment .submitted p {}
 
@@ -1467,7 +1556,13 @@ ul.action-links li {}
 
 .comment .user-signature {}
 
-.comment ul.links {}
+.comment ul.links {
+  display: none;
+}
+
+.comment:hover ul.links {
+  display: block;
+}
 
 /*
  * Comment title
@@ -1479,7 +1574,9 @@ ul.action-links li {}
 /*
  * Comment states
  */
-.comment-new {}
+.comment-new {
+  background: #;
+}
 
 .comment-by-anonymous {}
 
@@ -1625,6 +1722,14 @@ form .user-picture {
 
 form .description {
   color: #999;
+}
+
+/*
+ * Comment form
+ */
+
+#comment-form textarea {
+  max-width: 435px;
 }
 
 /*
@@ -2005,7 +2110,8 @@ border: none;
  *   User login / Social login
  * ========================================================================== */
 
-#user-login .item-list ul li {
+#user-login .item-list ul li,
+#user-login-form .item-list ul li {
   margin-left: 0;
 }
 
@@ -2018,15 +2124,19 @@ border: none;
   /* =============================================================================
  *   Spot views
  * ========================================================================== */
+.view-spot-overview {
+  position: relative;
+}
 
  .view-spot-overview .views-row {
   width: 316px;
-  height: 216px;
+  height: 200px;
   position: relative;
+  overflow: hidden;
   display: inline-block;
   box-sizing: border-box;
+  -moz-box-sizing: borer-box;
  }
-
 
 .view-spot-overview .node-title {
   bottom: 0;
@@ -2043,7 +2153,7 @@ border: none;
 }
 
 .view-spot-overview .rate-widget {
-  right: 10px;
+  right: 20px;
   top: 10px;
   position: absolute;
 }
@@ -2055,16 +2165,17 @@ border: none;
 /* more link */
 
 .view-spot-overview .more-link {
-  position: absolute;
-  bottom: -10px;
-  right: 0;
+  margin-top: 5px;
+/*  position: absolute;
+  bottom: -33px;
+  right: 0;*/
 }
 
 .view-spot-overview .more-link a {
-  padding: 21px 18px 11px;
+  padding: 7px 8px;
   color: #fff;
-  font-size: 24px;
-  border-radius: 0 0 3px 3px;
+  font-size: 12pt;
+  border-radius: 3px;
   background: #00a8ee;
 }
    /* =============================================================================
